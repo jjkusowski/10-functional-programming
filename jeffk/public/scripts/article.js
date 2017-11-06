@@ -77,7 +77,7 @@ var app = app || {};
       // DONE: Transform each author string into an object with properties for the author's name, as well as the total number of words across all articles written by the specified author.
       // HINT: This .map() should be set up to return an object literal with two properties.
       // The first property should be pretty straightforward, but you will need to chain some combination of .filter(), .map(), and .reduce() to get the value for the second property.
-      let numwords = app.Article.all.filter(function(article) {
+      let numWords = app.Article.all.filter(function(article) {
         if (article.author === author) {
           return article;
         }
@@ -86,7 +86,7 @@ var app = app || {};
       }).reduce(function(acc, cur){
         return acc + cur;
       });
-      return {author: author, words: numwords
+      return {author: author, numWords: numWords
       }
     })
   }
@@ -136,4 +136,4 @@ var app = app || {};
       .then(callback);
   };
   module.Article = Article;
-}(app))
+})(app);
