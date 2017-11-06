@@ -12,25 +12,7 @@
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
     <!-- TODO: Setup a template for each row of the Author Stats section of this page: -->
     <script id="article-template" type="text/x-handlebars-template">
-      <section class="clearfix">
-
-        <dt>Total articles:</dt><dd class="articles">{{articles}}</dd>
-        <dt>Total words:</dt> <dd class="words">{{words}}</dd>
-        <h2>Author Stats</h2>
-        <p><em>Details on who is writing, and how much writing they are doing...</em></p>
-        <ul class="author-stats">
-          <dt>{{author}} {{numWords}} written</dt>
-        </ul>
-        <!-- <header>
-          <h1>{{title}}</h1>
-          <div class="byline">
-            By <address><a href="{{authorUrl}}">{{author}}</a></address>
-            {{publishStatus}}
-          </div>
-        </header>
-        <section class="article-body">{{{body}}}</section>
-        <a href="#" class="read-on">Read on &rarr;</a> -->
-      </section>
+      <p>{{author}}</p>
     </script>
   </head>
   <body>
@@ -53,7 +35,12 @@
     <main class="clearfix">
       <h1>Blog Stats</h1>
       <section id="blog-stats">
-
+        <dt>Total articles:</dt> <dd class="articles"></dd>
+        <dt>Total words:</dt> <dd class="words"></dd>
+        <h2>Author Stats</h2>
+        <p><em>Details on who is writing, and how much writing they are doing...</em></p>
+        <ul class="author-stats">
+        </ul>
       </section>
     </main>
     <footer>
@@ -66,7 +53,7 @@
     <script src="/scripts/articleView.js"></script>
     <!-- DONE: Due to changes in article.js and articleView.js to attach their interior objects to a global 'app' object, we need to make changes to the contents of the following <script> tag: -->
     <script>
-      // DONE: After we fetch and load all the articles, what view function do we want to run next?
+      // TODO: After we fetch and load all the articles, what view function do we want to run next?
       // Let's pass in a callback function, to determine what happens AFTER all articles are loaded.
       app.Article.fetchAll(app.articleView.initAdminPage);
     </script>
